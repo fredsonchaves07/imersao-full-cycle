@@ -15,8 +15,10 @@ public class PlayerJpaEntity {
     @Column(columnDefinition = "VARCHAR(255)")
     private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private double price;
 
     public PlayerJpaEntity() {
