@@ -1,4 +1,4 @@
-package com.fredsonchaves07.msconsolidacao.domain.entity;
+package com.fredsonchaves07.msconsolidacao.domain.entities;
 
 import java.util.ArrayList;
 import java.util.List;

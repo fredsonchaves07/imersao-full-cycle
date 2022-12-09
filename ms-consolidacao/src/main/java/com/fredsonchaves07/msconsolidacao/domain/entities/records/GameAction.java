@@ -1,4 +1,4 @@
-package com.fredsonchaves07.msconsolidacao.domain.entity.records;
+package com.fredsonchaves07.msconsolidacao.domain.entities.records;
 
 import java.util.UUID;
 

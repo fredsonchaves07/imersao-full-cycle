@@ -1,7 +1,7 @@
-package com.fredsonchaves07.msconsolidacao.domain.entity;
+package com.fredsonchaves07.msconsolidacao.domain.entities;
 
-import com.fredsonchaves07.msconsolidacao.domain.entity.records.GameAction;
-import com.fredsonchaves07.msconsolidacao.domain.entity.records.MatchResult;
+import com.fredsonchaves07.msconsolidacao.domain.entities.records.GameAction;
+import com.fredsonchaves07.msconsolidacao.domain.entities.records.MatchResult;
 
 import java.time.OffsetDateTime;
 import java.util.List;
