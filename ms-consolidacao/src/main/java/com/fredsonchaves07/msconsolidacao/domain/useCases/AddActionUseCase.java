@@ -44,7 +44,7 @@ public class AddActionUseCase {
 
     private void setActionMatch(AddActionInput input, int score) {
         Match match = getMatchById(input.matchId());
-        GameAction gameAction = new GameAction(input.playerId(), input.minute(), input.action(), score);
+        GameAction gameAction = new GameAction(input.playerId(), input.playerName(), input.minute(), input.action(), score);
         match.setActions(gameAction);
         matchRepository.saveAction(match, score);
     }

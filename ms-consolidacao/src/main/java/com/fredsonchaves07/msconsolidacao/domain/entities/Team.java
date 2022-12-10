@@ -26,6 +26,10 @@ public class Team {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addPlayer(Player player) {
         this.players.add(player);
     }

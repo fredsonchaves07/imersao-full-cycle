@@ -12,19 +12,19 @@ public class Match {
 
     private UUID id;
 
-    private Team teamA;
+    private String teamAName;
 
-    private Team teamB;
+    private String teamBName;
 
     private UUID teamAId;
 
     private UUID teamBId;
 
-    private OffsetDateTime date;
+    private OffsetDateTime match_date;
 
     private String status;
 
-    private MatchResult matchResult;
+    private MatchResult result;
 
     private final List<GameAction> actions = new LinkedList<>();
 
@@ -32,11 +32,13 @@ public class Match {
 
     }
 
-    public Match(UUID id, UUID teamAId, UUID teamBId, OffsetDateTime date) {
+    public Match(UUID id, UUID teamAId, String teamAName, UUID teamBId, String teamBName, OffsetDateTime date) {
         this.id = id;
         this.teamAId = teamAId;
+        this.teamAName = teamAName;
+        this.teamBName = teamBName;
         this.teamBId = teamBId;
-        this.date = date;
+        this.match_date = date;
     }
 
     public void setActions(GameAction gameAction) {
@@ -47,8 +49,44 @@ public class Match {
         return new MatchResult(teamAScore, teamBScore);
     }
 
-    public void setMatchResult(MatchResult matchResult) {
-        this.matchResult = matchResult;
+    public void setResult(MatchResult result) {
+        this.result = result;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getTeamAName() {
+        return teamAName;
+    }
+
+    public String getTeamBName() {
+        return teamBName;
+    }
+
+    public UUID getTeamAId() {
+        return teamAId;
+    }
+
+    public UUID getTeamBId() {
+        return teamBId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public MatchResult getResult() {
+        return result;
+    }
+
+    public List<GameAction> getActions() {
+        return actions;
+    }
+
+    public OffsetDateTime getMatchDate() {
+        return match_date;
     }
 
     public String getResult(MatchResult matchResult) {

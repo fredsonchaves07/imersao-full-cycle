@@ -26,7 +26,7 @@ public class AddMatchUseCase {
     private Match createMatch(AddMatchInput input) {
         Team teamA = getTeamById(input.teamAId());
         Team teamB = getTeamById(input.teamBId());
-        return new Match(input.id(), teamA.getId(), teamB.getId(), input.date());
+        return new Match(input.id(), teamA.getId(), teamA.getName(), teamB.getId(), teamB.getName(), input.date());
     }
 
     private Team getTeamById(UUID id) {

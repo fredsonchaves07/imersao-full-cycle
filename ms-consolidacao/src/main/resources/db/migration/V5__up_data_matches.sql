@@ -1,0 +1,2 @@
+INSERT INTO matches (id, match_date, team_a_id, team_a_name, team_b_id, team_b_name, result) VALUES ('97ed7b97-ea2f-4bab-80e6-e14800e4bfcc', '2021-12-02 00:00:00', '76ef612d-acdf-48cd-af1c-9313d16ab642', 'Argentina', 'b30cf8e9-d02e-408e-9494-c4ae95b85b49', 'Alemanha', '1-0');
+INSERT INTO matches (id, match_date, team_a_id, team_a_name, team_b_id, team_b_name, result) VALUES ('a9d93ef1-7f1a-489f-89a3-d0321735c326', '2021-12-02 00:00:00', '4da19d91-c700-4865-8333-80efc789a70f', 'Brasil', '52f02f8d-bf04-4bd2-8b3d-28ec97e562a8', 'Bélgica', '1-0');
