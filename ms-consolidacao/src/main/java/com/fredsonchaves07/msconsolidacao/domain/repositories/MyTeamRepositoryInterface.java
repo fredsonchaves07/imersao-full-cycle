@@ -11,11 +11,11 @@ public interface MyTeamRepositoryInterface {
 
     MyTeam findById(UUID id);
 
-    void addScore(double score);
+    void addScore(int score);
 
     void create(MyTeam myTeam);
 
-    List<Player> findAllPlayers(Team team);
+    List<Player> findAllPlayers(MyTeam myTeam);
 
     void savePlayers(MyTeam myTeam);
 

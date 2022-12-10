@@ -1,0 +1,1 @@
+INSERT INTO my_team (id, name, score) VALUES ('22087246-01bc-46ad-a9d9-a99a6d734167', 'Meu Time FC', 100);

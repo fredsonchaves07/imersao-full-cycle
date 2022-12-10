@@ -18,11 +18,22 @@ public class MyTeam {
         this.name = name;
     }
 
+    public MyTeam(UUID id, String name, List<Player> players, int score) {
+        this.id = id;
+        this.name = name;
+        this.players = players;
+        this.score = score;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public double getScore() {
+    public int getScore() {
         return score;
     }
 
