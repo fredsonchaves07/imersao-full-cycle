@@ -8,13 +8,13 @@ public class Player {
 
     private String name;
 
-    private double price;
+    private int price;
 
     public Player() {
 
     }
 
-    public Player(UUID id, String name, double price) {
+    public Player(UUID id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -28,7 +28,11 @@ public class Player {
         return name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

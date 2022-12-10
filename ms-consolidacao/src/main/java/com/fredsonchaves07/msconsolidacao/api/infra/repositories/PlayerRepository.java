@@ -1,9 +1,9 @@
-package com.fredsonchaves07.msconsolidacao.infra.repositories;
+package com.fredsonchaves07.msconsolidacao.api.infra.repositories;
 
+import com.fredsonchaves07.msconsolidacao.api.infra.entities.PlayerJpaEntity;
 import com.fredsonchaves07.msconsolidacao.domain.entities.Player;
 import com.fredsonchaves07.msconsolidacao.domain.repositories.PlayerRepositoryInterface;
-import com.fredsonchaves07.msconsolidacao.infra.entities.PlayerJpaEntity;
-import com.fredsonchaves07.msconsolidacao.infra.repositories.jpa.PlayerJpaRepository;
+import com.fredsonchaves07.msconsolidacao.api.infra.repositories.jpa.PlayerJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

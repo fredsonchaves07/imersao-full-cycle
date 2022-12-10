@@ -1,18 +1,19 @@
 package com.fredsonchaves07.msconsolidacao.domain.entities;
 
 import java.util.List;
+import java.util.UUID;
 
 public class MyTeam {
 
-    private String id;
+    private UUID id;
 
     private String name;
 
     private List<Player> players;
 
-    private double score;
+    private int score;
 
-    public MyTeam(String id, String name) {
+    public MyTeam(UUID id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -25,7 +26,7 @@ public class MyTeam {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

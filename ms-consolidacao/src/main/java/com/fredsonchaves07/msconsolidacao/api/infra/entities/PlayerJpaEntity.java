@@ -1,4 +1,4 @@
-package com.fredsonchaves07.msconsolidacao.infra.entities;
+package com.fredsonchaves07.msconsolidacao.api.infra.entities;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -19,13 +19,13 @@ public class PlayerJpaEntity {
     private String name;
 
     @Column(nullable = false)
-    private double price;
+    private int price;
 
     public PlayerJpaEntity() {
 
     }
 
-    public PlayerJpaEntity(UUID id, String name, double price) {
+    public PlayerJpaEntity(UUID id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -39,7 +39,7 @@ public class PlayerJpaEntity {
         return name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 }

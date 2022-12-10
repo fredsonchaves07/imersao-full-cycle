@@ -5,10 +5,11 @@ import com.fredsonchaves07.msconsolidacao.domain.entities.Player;
 import com.fredsonchaves07.msconsolidacao.domain.entities.Team;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface MyTeamRepositoryInterface {
 
-    MyTeam findById(String id);
+    MyTeam findById(UUID id);
 
     void addScore(double score);
 
@@ -17,4 +18,6 @@ public interface MyTeamRepositoryInterface {
     List<Player> findAllPlayers(Team team);
 
     void savePlayers(MyTeam myTeam);
+
+    void update(MyTeam myTeam);
 }

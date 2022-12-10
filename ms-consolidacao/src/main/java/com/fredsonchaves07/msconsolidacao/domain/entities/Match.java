@@ -4,19 +4,21 @@ import com.fredsonchaves07.msconsolidacao.domain.entities.records.GameAction;
 import com.fredsonchaves07.msconsolidacao.domain.entities.records.MatchResult;
 
 import java.time.OffsetDateTime;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 public class Match {
 
-    private String id;
+    private UUID id;
 
     private Team teamA;
 
     private Team teamB;
 
-    private String teamAId;
+    private UUID teamAId;
 
-    private String teamBId;
+    private UUID teamBId;
 
     private OffsetDateTime date;
 
@@ -24,21 +26,29 @@ public class Match {
 
     private MatchResult matchResult;
 
-    private List<GameAction> action;
+    private final List<GameAction> actions = new LinkedList<>();
 
     public Match() {
 
     }
 
-    public Match(String id, Team teamA, Team teamB, OffsetDateTime date) {
+    public Match(UUID id, UUID teamAId, UUID teamBId, OffsetDateTime date) {
         this.id = id;
-        this.teamA = teamA;
-        this.teamB = teamB;
+        this.teamAId = teamAId;
+        this.teamBId = teamBId;
         this.date = date;
+    }
+
+    public void setActions(GameAction gameAction) {
+        this.actions.add(gameAction);
     }
 
     public MatchResult newMatchResult(int teamAScore, int teamBScore) {
         return new MatchResult(teamAScore, teamBScore);
+    }
+
+    public void setMatchResult(MatchResult matchResult) {
+        this.matchResult = matchResult;
     }
 
     public String getResult(MatchResult matchResult) {

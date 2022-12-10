@@ -5,17 +5,15 @@ import com.fredsonchaves07.msconsolidacao.domain.entities.Player;
 
 import java.util.List;
 
-public class MyTeamChoosePlayers {
+public class MyTeamChoosePlayersService {
 
-    double totalCost = 0.0;
+    int totalCost;
 
-    double totalEarned = 0.0;
+    int totalEarned;
 
-    public void execute(MyTeam myTeam, List<Player> players) {
+    public void execute(MyTeam myTeam, List<Player> myPlayers, List<Player> players) {
+        totalEarned = calculateTotalEarned(myPlayers, players);
         for (Player player : players) {
-            if (playerInMyTeam(player, myTeam) && !playerInPlayersList(player, players)) {
-                totalEarned += player.getPrice();
-            }
             if (!playerInMyTeam(player, myTeam) && playerInPlayersList(player, players)) {
                 totalEarned += player.getPrice();
             }
@@ -33,5 +31,15 @@ public class MyTeamChoosePlayers {
 
     private boolean playerInPlayersList(Player player, List<Player> players) {
         return players.contains(player);
+    }
+
+    private int calculateTotalEarned(List<Player> myPLayers, List<Player> players) {
+        int totalEarned = 0;
+        for (Player player: players) {
+            if (!playerInPlayersList(player, players)) {
+                totalEarned += player.getPrice();
+            }
+        }
+        return totalEarned;
     }
 }
