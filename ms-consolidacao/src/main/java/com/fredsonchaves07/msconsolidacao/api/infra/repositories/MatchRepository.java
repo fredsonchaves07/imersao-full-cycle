@@ -3,6 +3,7 @@ package com.fredsonchaves07.msconsolidacao.api.infra.repositories;
 import com.fredsonchaves07.msconsolidacao.api.infra.entities.MatchJpaEntity;
 import com.fredsonchaves07.msconsolidacao.api.infra.repositories.jpa.MatchJpaRepository;
 import com.fredsonchaves07.msconsolidacao.domain.entities.Match;
+import com.fredsonchaves07.msconsolidacao.domain.entities.records.MatchResult;
 import com.fredsonchaves07.msconsolidacao.domain.repositories.MatchRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -39,7 +40,8 @@ public class MatchRepository implements MatchRepositoryInterface {
                         match.getTeamAName(),
                         UUID.fromString(match.getTeamBId()),
                         match.getTeamBName(),
-                        match.getMatchDate())
+                        match.getMatchDate(),
+                        new MatchResult(Integer.parseInt(match.getResult().split("-")[0]), Integer.parseInt(match.getResult().split("-")[1])))
                 )
                 .toList();
     }

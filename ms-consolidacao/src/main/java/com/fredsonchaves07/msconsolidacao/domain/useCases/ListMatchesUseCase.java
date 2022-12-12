@@ -19,15 +19,18 @@ public class ListMatchesUseCase {
 
     public List<MatchOutput> execute() {
         List<Match> matches = repository.findAll();
-        List<GameAction> actions = (List<GameAction>) matches.stream().map(match -> match.getActions());
-        List<MatchActionsOutput> matchActionsOutputs = actions
-                .stream()
-                .map(action -> new MatchActionsOutput(
-                        action.playerId().toString(), action.playerName(), action.minute(), action.action(), action.score())
-                )
-                .toList();
         List<MatchOutput> matchOutputs = new LinkedList<>();
         for (Match match : matches) {
+            List<MatchActionsOutput> matchActionsOutputs = match.getActions()
+                    .stream()
+                    .map(action -> new MatchActionsOutput(
+                            action.playerId().toString(),
+                            action.playerName(),
+                            action.minute(),
+                            action.action(),
+                            action.score()
+                    ))
+                    .toList();
             matchOutputs.add(new MatchOutput(
                     match.getId().toString(),
                     match.getTeamAId().toString(),

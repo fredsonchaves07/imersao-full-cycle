@@ -41,6 +41,16 @@ public class Match {
         this.match_date = date;
     }
 
+    public Match(UUID id, UUID teamAId, String teamAName, UUID teamBId, String teamBName, OffsetDateTime date, MatchResult result) {
+        this.id = id;
+        this.teamAId = teamAId;
+        this.teamAName = teamAName;
+        this.teamBName = teamBName;
+        this.teamBId = teamBId;
+        this.match_date = date;
+        this.result = result;
+    }
+
     public void setActions(GameAction gameAction) {
         this.actions.add(gameAction);
     }
