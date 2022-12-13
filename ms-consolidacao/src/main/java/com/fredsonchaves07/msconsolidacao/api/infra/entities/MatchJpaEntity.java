@@ -1,10 +1,9 @@
 package com.fredsonchaves07.msconsolidacao.api.infra.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Table(name = "matches")
@@ -31,9 +30,17 @@ public class MatchJpaEntity {
     @Column(name = "result")
     private String result;
 
+    @OneToMany
+    @JoinTable(
+            name = "actions",
+            joinColumns = @JoinColumn(name = "match_id"),
+            inverseJoinColumns = @JoinColumn(name = "id")
+    )
+    List<ActionJpaEntity> actions = new LinkedList<>();
+
     public MatchJpaEntity(){}
 
-    public MatchJpaEntity(String id, OffsetDateTime matchDate, String teamAId, String teamAName, String teamBId, String teamBName, String result) {
+    public MatchJpaEntity(String id, OffsetDateTime matchDate, String teamAId, String teamAName, String teamBId, String teamBName, String result, List<ActionJpaEntity> actions) {
         this.id = id;
         this.matchDate = matchDate;
         this.teamAId = teamAId;
@@ -41,6 +48,7 @@ public class MatchJpaEntity {
         this.teamBId = teamBId;
         this.teamBName = teamBName;
         this.result = result;
+        this.actions = actions;
     }
 
     public String getId() {
@@ -69,5 +77,9 @@ public class MatchJpaEntity {
 
     public String getResult() {
         return result;
+    }
+
+    public List<ActionJpaEntity> getActions() {
+        return actions;
     }
 }

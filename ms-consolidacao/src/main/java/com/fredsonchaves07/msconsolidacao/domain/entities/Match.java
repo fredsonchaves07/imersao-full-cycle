@@ -26,28 +26,20 @@ public class Match {
 
     private MatchResult result;
 
-    private final List<GameAction> actions = new LinkedList<>();
+    private List<GameAction> actions = new LinkedList<>();
 
     public Match() {
 
     }
 
-    public Match(UUID id, UUID teamAId, String teamAName, UUID teamBId, String teamBName, OffsetDateTime date) {
+    public Match(UUID id, UUID teamAId, String teamAName, UUID teamBId, String teamBName, OffsetDateTime date, MatchResult result, List<GameAction> actions) {
         this.id = id;
         this.teamAId = teamAId;
         this.teamAName = teamAName;
         this.teamBName = teamBName;
         this.teamBId = teamBId;
         this.match_date = date;
-    }
-
-    public Match(UUID id, UUID teamAId, String teamAName, UUID teamBId, String teamBName, OffsetDateTime date, MatchResult result) {
-        this.id = id;
-        this.teamAId = teamAId;
-        this.teamAName = teamAName;
-        this.teamBName = teamBName;
-        this.teamBId = teamBId;
-        this.match_date = date;
+        this.actions = actions;
         this.result = result;
     }
 

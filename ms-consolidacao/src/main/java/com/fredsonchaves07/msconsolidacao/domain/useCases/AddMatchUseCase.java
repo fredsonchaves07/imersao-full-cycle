@@ -2,6 +2,7 @@ package com.fredsonchaves07.msconsolidacao.domain.useCases;
 
 import com.fredsonchaves07.msconsolidacao.domain.entities.Match;
 import com.fredsonchaves07.msconsolidacao.domain.entities.Team;
+import com.fredsonchaves07.msconsolidacao.domain.entities.records.MatchResult;
 import com.fredsonchaves07.msconsolidacao.domain.repositories.MatchRepositoryInterface;
 import com.fredsonchaves07.msconsolidacao.domain.repositories.TeamRepositoryInterface;
 import com.fredsonchaves07.msconsolidacao.domain.useCases.input.AddMatchInput;
@@ -26,7 +27,7 @@ public class AddMatchUseCase {
     private Match createMatch(AddMatchInput input) {
         Team teamA = getTeamById(input.teamAId());
         Team teamB = getTeamById(input.teamBId());
-        return new Match(input.id(), teamA.getId(), teamA.getName(), teamB.getId(), teamB.getName(), input.date());
+        return new Match(input.id(), teamA.getId(), teamA.getName(), teamB.getId(), teamB.getName(), input.date(), new MatchResult(input.teamAScore(), input.teamBScore()),null);
     }
 
     private Team getTeamById(UUID id) {

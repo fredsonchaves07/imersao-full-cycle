@@ -5,4 +5,4 @@ import com.fredsonchaves07.msconsolidacao.domain.entities.Player;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-public record AddActionInput(UUID matchId, UUID teamId, UUID playerId, String playerName, int minute, String action) { }
+public record AddActionInput(UUID actionId,  UUID matchId, UUID teamId, UUID playerId, String playerName, int minute, String action) { }

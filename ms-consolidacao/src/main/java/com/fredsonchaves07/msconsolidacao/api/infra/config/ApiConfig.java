@@ -3,6 +3,7 @@ package com.fredsonchaves07.msconsolidacao.api.infra.config;
 import com.fredsonchaves07.msconsolidacao.api.infra.repositories.MatchRepository;
 import com.fredsonchaves07.msconsolidacao.api.infra.repositories.MyTeamRepository;
 import com.fredsonchaves07.msconsolidacao.api.infra.repositories.PlayerRepository;
+import com.fredsonchaves07.msconsolidacao.domain.useCases.GetMatchByIdUseCase;
 import com.fredsonchaves07.msconsolidacao.domain.useCases.ListMatchesUseCase;
 import com.fredsonchaves07.msconsolidacao.domain.useCases.ListPlayersUseCase;
 import com.fredsonchaves07.msconsolidacao.domain.useCases.MyTeamPlayersUseCase;
@@ -35,5 +36,10 @@ public class ApiConfig {
     @Bean
     public ListMatchesUseCase listMatchesUseCase() {
         return new ListMatchesUseCase(matchRepository);
+    }
+
+    @Bean
+    public GetMatchByIdUseCase getMatchByIdUseCase() {
+        return new GetMatchByIdUseCase(matchRepository);
     }
 }
